@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-restapi-deployment
+  name: python-restapi
   namespace: default
   labels:
     app: python-restapi
