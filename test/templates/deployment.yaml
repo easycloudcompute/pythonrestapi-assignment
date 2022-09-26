@@ -16,7 +16,7 @@ spec:
         app: python-restapi
     spec:
       containers:
-      - name: python-restapi
+      - name: python-restapi-container
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: Always
         ports:

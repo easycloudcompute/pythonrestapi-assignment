@@ -8,9 +8,9 @@ image:
   repository: reg0001.azurecr.io/reg0001
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 100
+  tag: latest
 
-application: python-restapi-application
+#application: python-restapi-application
 
 imagePullSecrets: []
 nameOverride: ""
