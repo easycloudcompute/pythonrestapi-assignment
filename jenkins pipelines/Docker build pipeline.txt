@@ -1,0 +1,40 @@
+pipeline {
+    
+    agent any
+    
+    environment {
+        
+        registryName = "reg0001"
+        registryUrl  =  "reg0001.azurecr.io"
+        registryCredential = "acr-demo"
+        dockerImage = ''
+        
+    }
+    
+    stages {
+        stage ('Checkout code from github') {
+            steps {
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/easycloudcompute/python-rest-api-aks.git']]])
+            }
+            
+        }
+        
+        stage('Build docker image from dockerfile') {
+            steps {
+                script {
+                    dockerImage = docker.build registryName
+                }
+            }
+        }
+        
+        stage('Push Docker Image to ACR') {
+            steps {
+                script {
+                    docker.withRegistry( "http://${registryUrl}", registryCredential ) {
+                    dockerImage.push()
+                }
+            }
+        }
+    }
+    }    
+}
