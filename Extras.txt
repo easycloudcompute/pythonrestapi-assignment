@@ -1,0 +1,31 @@
+### Tools / Technologies
+
+Visual Studio Code
+az cli installed on windows 10 with plugin: az aks install-cli ( make sure to login using az login before starting )
+Git
+Github
+jenkins
+docker
+HELM
+Azure Container Registry
+Azure Kubernetes Services
+
+=========================================================================================================================================================
+
+### Closing thoughts
+
+Automation can also be performed with below methods
+
+> Setting up jenkins server using Ansible
+> Setting up jenkins using docker compose
+> Deploying pipeline using AzureDevops
+
+=========================================================================================================================================================
+
+### Some Minor Challenges
+
+> Cannot build using Azure pipelines , filled up a Azure DevOps Parallelism Request form for granting access to public / private repos
+> kubectl cli plugin not working while writing pipeline for jenkins and kubernetes integration , so tried with HELM
+> Troubleshooting errors while builing pipelines , writing codes
+
+=========================================================================================================================================================
