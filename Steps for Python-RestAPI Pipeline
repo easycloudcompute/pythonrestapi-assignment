@@ -69,6 +69,45 @@ NAME    NAMESPACE       REVISION        UPDATED STATUS  CHART   APP VERSION
 
 4. Creating a helm chart for python restapi
 
+### Creating a helm chart called python-restapi-chart under /var/lib/jenkins ie home dir of jenkins user ( created by default post installation )
+
+1. Create a folder structure
+
+jenkins@jenkins-server1:~$ helm create test
+jenkins@jenkins-server1:~$ cd test/
+jenkins@jenkins-server1:~/test$ ls -l
+total 16
+-rw-r--r-- 1 jenkins jenkins 1140 Sep 26 20:27 Chart.yaml
+drwxr-xr-x 2 jenkins jenkins 4096 Sep 26 20:27 charts
+drwxr-xr-x 3 jenkins jenkins 4096 Sep 26 20:27 templates
+-rw-r--r-- 1 jenkins jenkins 1871 Sep 26 20:27 values.yaml
+jenkins@jenkins-server1:~/test$ cd templates/
+jenkins@jenkins-server1:~/test/templates$ ls -l
+total 32
+-rw-r--r-- 1 jenkins jenkins 1735 Sep 26 20:27 NOTES.txt
+-rw-r--r-- 1 jenkins jenkins 1752 Sep 26 20:27 _helpers.tpl
+-rw-r--r-- 1 jenkins jenkins 1821 Sep 26 20:27 deployment.yaml
+-rw-r--r-- 1 jenkins jenkins  907 Sep 26 20:27 hpa.yaml
+-rw-r--r-- 1 jenkins jenkins 2073 Sep 26 20:27 ingress.yaml
+-rw-r--r-- 1 jenkins jenkins  352 Sep 26 20:27 service.yaml
+-rw-r--r-- 1 jenkins jenkins  314 Sep 26 20:27 serviceaccount.yaml
+drwxr-xr-x 2 jenkins jenkins 4096 Sep 26 20:27 tests
+
+2. Edit the name parameter in Chart.yaml to python-restapi-chart
+
+jenkins@jenkins-server1:~/test$ cat Chart.yaml | grep name
+name: python-restapi-chart
+
+3. View helm chart
+
+jenkins@jenkins-server1:~$ helm show chart test
+apiVersion: v2
+appVersion: 1.16.0
+description: A Helm chart for Kubernetes
+name: python-restapi-chart
+type: application
+version: 0.1.0
+
 =========================================================================================================================================================
 
 5. Follow word document to setup the pipelines 
