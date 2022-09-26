@@ -9,7 +9,7 @@ spec:
     app: python-restapi
   type: LoadBalancer
   ports:
-    - name: python-restapi-service
+    - name: python-restapi
       targetPort: 8080
       port: 8080
       nodePort: 32750
