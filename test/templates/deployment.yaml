@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-restapi-deployment
+  namespace: default
+  labels:
+    app: python-restapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-restapi
+  template:
+    metadata:
+      labels:
+        app: python-restapi
+    spec:
+      containers:
+      - name: python-restapi
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
