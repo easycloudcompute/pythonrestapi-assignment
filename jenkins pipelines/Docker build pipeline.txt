@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage ('Checkout code from github') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/easycloudcompute/python-rest-api-aks.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/easycloudcompute/pythonrestapi-assignment.git']]])
             }
             
         }
