@@ -1,23 +1,10 @@
-### Github Repos
-
-https://github.com/easycloudcompute/pythonrestapi-assignment.git
-
-===========================================================================================================================================================
-
-### URL's / API's
-
-http://20.127.99.156:8080/ ( jenkins )
-http://20.206.229.101:8080/
-http://20.206.229.101:8080/time
-
-===========================================================================================================================================================
-
 ### Implementation Steps
 
 1. Jenkins Installation and Configuration - jenkins server1
 
 - Deployed jenkins server as an azure vm via terraform that uses a remote-exec provisioner for automation / bootstrapping 
-- Generate ssh key pair on local machine 
+
+- Generate ssh key pair on local machine ( done before deploying jenkins )
 
 ssh-keygen -m PEM -t rsa -b 4096
 
@@ -28,14 +15,7 @@ To view these files:
 cat ~/.ssh/id_rsa.pub
 cat ~/.ssh/id_rsa
 
-Logins: rahul/rahul
-
-- Deploy server using terraform:
-
-terraform init
-terraform fmt
-terraform plan
-terraform apply -auto-approve
+Login: Rahul using private key .ppk
 
 ===========================================================================================================================================================
 

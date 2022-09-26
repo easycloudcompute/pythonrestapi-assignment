@@ -1,14 +1,11 @@
 pipeline {
-	agent any
+    agent any
     stages {
         stage('Build on aks ') {
             steps {           
                         sh 'pwd'
-                        sh 'cp -R helm/* .'
-						sh 'ls -ltr'
-                        sh 'pwd'
-                        sh '/usr/local/bin/helm upgrade --install python-restapi-app python-restapi'
-              			
+                        sh '/usr/local/bin/helm upgrade --install python-restapi-app /var/lib/jenkins/test'
+                          
             }           
         }
     }
